@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 from copy import deepcopy
+import gzip
 import hashlib
 import importlib.util
 import json
@@ -45,10 +46,12 @@ def _scrub(value):
             elif key in ("ssh", "PUBLIC_KEY", "preexisting_ids"):
                 out[key] = REDACTED
             else:
-                out[key] = _scrub(item)
+                out[_scrub(key)] = _scrub(item)  # keys can be local artifact paths
         return out
     if isinstance(value, list):
         return [_scrub(v) for v in value]
+    if isinstance(value, str):
+        return value.replace(str(ROOT), "<repo>").replace(str(Path.home()), "<home>")
     return value
 
 
@@ -90,8 +93,16 @@ def main():
     for item in args.extra:
         name, _, path = item.partition("=")
         frozen.copy_tree(Path(path), args.out / name, skipped)
+    compressed = []
+    for path in sorted(p for p in args.out.rglob("*") if p.is_file() and p.stat().st_size > 20 * 1024 ** 2):
+        original = {"path": path.relative_to(args.out).as_posix(), "bytes": path.stat().st_size, "sha256": sha(path)}
+        with path.open("rb") as source, gzip.GzipFile(path.with_name(path.name + ".gz"), "wb", mtime=0) as target:
+            shutil.copyfileobj(source, target)
+        path.unlink()
+        compressed.append(original)
     files = sorted(p for p in args.out.rglob("*") if p.is_file())
     manifest = {"schema": "selfref_scaling_release_20261003", "skipped_private": sorted(skipped),
+                "gzipped_originals": compressed,
                 "files": [{"path": p.relative_to(args.out).as_posix(), "bytes": p.stat().st_size, "sha256": sha(p)}
                           for p in files]}
     (args.out / "MANIFEST.json").write_text(canonical(manifest) + "\n")

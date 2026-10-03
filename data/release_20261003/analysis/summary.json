@@ -1,0 +1,399 @@
+{
+ "bootstrap": {
+  "draws": 20000,
+  "interval": "percentile_95",
+  "paired": true,
+  "rule": "percentile 95%, numpy linear (Hyndman-Fan 7), exact",
+  "seed": 889981480442511901,
+  "unit": "block"
+ },
+ "claim_boundary": "behavioral labels by model readers; no consciousness, introspection-accuracy or mechanism claim",
+ "degenerate_intervals": 511,
+ "degenerate_note": "zero-width intervals reflect sample agreement, never a precise null",
+ "denominator": "planned blocks; failed, absent and unjudged labels count as not positive",
+ "files": {
+  "analysis.json": "6105e03a4c564e9ef72e18bd8469ad5f497aa558b8f7b663427720479fc617e6",
+  "q1.csv": "0694ea6b4f86e1d1d3b14618ac438ac3655995a200c94ca6be1b0d67010652aa",
+  "q1_cells.pdf": "7c2716e687ec9e4502a2e120b726047b9a3ecb5f7518bb54da0f951e75bf2493",
+  "q1_cells.png": "37549561b2195fc0f0a77e6fe2066eed0822cccb1069bd297b84e984b83bdb2f",
+  "q2_joint.csv": "fa2f11af2c157fc2f03cabca8b4ae385b839e07ee2b808831ba01d423f5a019a",
+  "q2_rates.csv": "b335e4db2c686318ea788190a03aa9b7b3118ed9b88451749308ee51aaaa1ada",
+  "q3a.csv": "c6c3d958146f1f39a1b9616d8b83b1db654cf0a120f9218f87105f855cfe1308",
+  "q3a_effects.pdf": "b077403ac9ad78f1fb03ffd9da7fbe5af98ca0340cf95a5d4acd99b262a70b05",
+  "q3a_effects.png": "41986092e72bdeb5e180dbb96d2391ec30866e58a81175cda519b7ac29d2346f",
+  "q3b.csv": "ea36f5c058bc9f3fa6c59b77e9b4cce881bc9234378b720912e370279818dbd6",
+  "q3c.csv": "6cafb57352af968893a2f5def5377c84f6838eaf0b3c5da850f35f82ac167fbc"
+ },
+ "inputs": {
+  "index_canonical_sha256": "b8b829ebc6590197e040a2ef3493fd6ee3096451b6f52785018f1213cfa0d697",
+  "judgments_sha256": "046807d8ae5d6365453023b80c99e58f3780e3fca28ee9682bd9f8b3ac68f8bc",
+  "llama_inputs_sha256": "d801c6bdb9829b6beca14012e534065ea51faf5d1be47fdd52d91422929909fd",
+  "plan_sha256": "f8c4188b8310e63985666343eec43cbcea79c9c59be91dd5b21776c53d7f697d"
+ },
+ "judge_models": {
+  "anthropic": [
+   "claude-opus-5-5"
+  ],
+  "openai": [
+   "gpt-6-astra"
+  ]
+ },
+ "judgment_status_counts": {
+  "paper": {
+   "anthropic": {
+    "ok": 280
+   },
+   "openai": {
+    "ok": 280
+   }
+  },
+  "proposition": {
+   "anthropic": {
+    "ok": 160
+   },
+   "openai": {
+    "ok": 160
+   }
+  },
+  "structured": {
+   "anthropic": {
+    "ok": 807,
+    "schema_failure": 1
+   },
+   "openai": {
+    "ok": 808
+   }
+  }
+ },
+ "planned_judgments_per_reader": {
+  "paper": 280,
+  "proposition": 160,
+  "structured": 808
+ },
+ "q1_reading_details": {
+  "llama": {
+   "anthropic": {
+    "cell_rates": {
+     "HH": "1/12",
+     "HS": "1",
+     "SH": "1",
+     "SS": "11/12"
+    },
+    "complete_blocks": 12,
+    "description": "anything else",
+    "instruction_effect": {
+     "ci95": [
+      0.291667,
+      0.5
+     ],
+     "ci95_exact": [
+      "7/24",
+      "1/2"
+     ],
+     "degenerate": false,
+     "estimate": 0.416667,
+     "estimate_exact": "5/12",
+     "worst_case": [
+      0.416667,
+      0.416667
+     ],
+     "worst_case_exact": [
+      "5/12",
+      "5/12"
+     ]
+    },
+    "planned_blocks": 12,
+    "reading": "heterogeneous_or_inconclusive",
+    "rule_trail": [
+     [
+      "incomplete",
+      false
+     ],
+     [
+      "floor",
+      false
+     ],
+     [
+      "both_components_large",
+      false
+     ],
+     [
+      "instruction_dominant",
+      false
+     ],
+     [
+      "transcript_dominant",
+      false
+     ],
+     [
+      "heterogeneous_or_inconclusive",
+      true
+     ]
+    ],
+    "transcript_effect": {
+     "ci95": [
+      0.291667,
+      0.5
+     ],
+     "ci95_exact": [
+      "7/24",
+      "1/2"
+     ],
+     "degenerate": false,
+     "estimate": 0.416667,
+     "estimate_exact": "5/12",
+     "worst_case": [
+      0.416667,
+      0.416667
+     ],
+     "worst_case_exact": [
+      "5/12",
+      "5/12"
+     ]
+    }
+   },
+   "openai": {
+    "cell_rates": {
+     "HH": "1/12",
+     "HS": "1",
+     "SH": "1",
+     "SS": "1"
+    },
+    "complete_blocks": 12,
+    "description": "instruction and transcript effect lower bounds >= 0.30 (Llama-like)",
+    "instruction_effect": {
+     "ci95": [
+      0.375,
+      0.5
+     ],
+     "ci95_exact": [
+      "3/8",
+      "1/2"
+     ],
+     "degenerate": false,
+     "estimate": 0.458333,
+     "estimate_exact": "11/24",
+     "worst_case": [
+      0.458333,
+      0.458333
+     ],
+     "worst_case_exact": [
+      "11/24",
+      "11/24"
+     ]
+    },
+    "planned_blocks": 12,
+    "reading": "both_components_large",
+    "rule_trail": [
+     [
+      "incomplete",
+      false
+     ],
+     [
+      "floor",
+      false
+     ],
+     [
+      "both_components_large",
+      true
+     ]
+    ],
+    "transcript_effect": {
+     "ci95": [
+      0.375,
+      0.5
+     ],
+     "ci95_exact": [
+      "3/8",
+      "1/2"
+     ],
+     "degenerate": false,
+     "estimate": 0.458333,
+     "estimate_exact": "11/24",
+     "worst_case": [
+      0.458333,
+      0.458333
+     ],
+     "worst_case_exact": [
+      "11/24",
+      "11/24"
+     ]
+    }
+   }
+  },
+  "qwen": {
+   "anthropic": {
+    "cell_rates": {
+     "HH": "0",
+     "HS": "0",
+     "SH": "0",
+     "SS": "3/20"
+    },
+    "complete_blocks": 20,
+    "description": "anything else",
+    "instruction_effect": {
+     "ci95": [
+      0.0,
+      0.15
+     ],
+     "ci95_exact": [
+      "0",
+      "3/20"
+     ],
+     "degenerate": false,
+     "estimate": 0.075,
+     "estimate_exact": "3/40",
+     "worst_case": [
+      0.075,
+      0.075
+     ],
+     "worst_case_exact": [
+      "3/40",
+      "3/40"
+     ]
+    },
+    "planned_blocks": 20,
+    "reading": "heterogeneous_or_inconclusive",
+    "rule_trail": [
+     [
+      "incomplete",
+      false
+     ],
+     [
+      "floor",
+      false
+     ],
+     [
+      "both_components_large",
+      false
+     ],
+     [
+      "instruction_dominant",
+      false
+     ],
+     [
+      "transcript_dominant",
+      false
+     ],
+     [
+      "heterogeneous_or_inconclusive",
+      true
+     ]
+    ],
+    "transcript_effect": {
+     "ci95": [
+      0.0,
+      0.15
+     ],
+     "ci95_exact": [
+      "0",
+      "3/20"
+     ],
+     "degenerate": false,
+     "estimate": 0.075,
+     "estimate_exact": "3/40",
+     "worst_case": [
+      0.075,
+      0.075
+     ],
+     "worst_case_exact": [
+      "3/40",
+      "3/40"
+     ]
+    }
+   },
+   "openai": {
+    "cell_rates": {
+     "HH": "0",
+     "HS": "0",
+     "SH": "0",
+     "SS": "3/20"
+    },
+    "complete_blocks": 20,
+    "description": "anything else",
+    "instruction_effect": {
+     "ci95": [
+      0.0,
+      0.15
+     ],
+     "ci95_exact": [
+      "0",
+      "3/20"
+     ],
+     "degenerate": false,
+     "estimate": 0.075,
+     "estimate_exact": "3/40",
+     "worst_case": [
+      0.075,
+      0.075
+     ],
+     "worst_case_exact": [
+      "3/40",
+      "3/40"
+     ]
+    },
+    "planned_blocks": 20,
+    "reading": "heterogeneous_or_inconclusive",
+    "rule_trail": [
+     [
+      "incomplete",
+      false
+     ],
+     [
+      "floor",
+      false
+     ],
+     [
+      "both_components_large",
+      false
+     ],
+     [
+      "instruction_dominant",
+      false
+     ],
+     [
+      "transcript_dominant",
+      false
+     ],
+     [
+      "heterogeneous_or_inconclusive",
+      true
+     ]
+    ],
+    "transcript_effect": {
+     "ci95": [
+      0.0,
+      0.15
+     ],
+     "ci95_exact": [
+      "0",
+      "3/20"
+     ],
+     "degenerate": false,
+     "estimate": 0.075,
+     "estimate_exact": "3/40",
+     "worst_case": [
+      0.075,
+      0.075
+     ],
+     "worst_case_exact": [
+      "3/40",
+      "3/40"
+     ]
+    }
+   }
+  }
+ },
+ "q1_readings": {
+  "llama": {
+   "anthropic": "heterogeneous_or_inconclusive",
+   "openai": "both_components_large"
+  },
+  "qwen": {
+   "anthropic": "heterogeneous_or_inconclusive",
+   "openai": "heterogeneous_or_inconclusive"
+  }
+ },
+ "schema": "selfref_scaling_analysis_v1",
+ "study": "selfref-scaling-qwen397b-20261003"
+}

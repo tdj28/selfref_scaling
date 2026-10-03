@@ -1,0 +1,410 @@
+{
+ "band_layers": [
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38
+ ],
+ "capture_indices": [
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39
+ ],
+ "captured_rows": 80,
+ "claim_boundary": "descriptive readout; cells differ in input text; no causal or mechanism claim",
+ "composition": "lm_head(final_norm(J_l h)), float32",
+ "files": {
+  "lens_cells.csv": "3d3fdc0b57a559643b7a6e99b83787a6cc0a0ce0f2eac6c29ab6d7f587e980be",
+  "lens_ranks.json": "75819f3d1be78639a226b079c29eda61a82353a8b4b29d2636ef6d314da27c89",
+  "lens_separation.csv": "d66319ab89605ce4b75bd9dba72f11794abbd0b2c69e67b127a4395018056358",
+  "lens_vectors.csv": "d642cdb9e9ac22d9fcc850c7496255342bccfb6b45363dc3b322838699cbe01a",
+  "lens_words.csv": "01f2e747aeaa26bb67494a63e0bb9c5c5942869f31eaa41f9edc60a6d36a0146"
+ },
+ "head": {
+  "norm_class": "transformers.models.qwen3_5_moe.modeling_qwen3_5_moe.Qwen3_5MoeRMSNorm",
+  "readout_dtype": "float32",
+  "rms_norm_eps": 1e-06,
+  "shards": {
+   "model.safetensors-00091-of-00094.safetensors": "3633797c27c32b194da65eaff2c5c27eb184bd547577c4124498bb8ae51e670f",
+   "model.safetensors-00094-of-00094.safetensors": "75b5c72a8dc8f07946dab6bdccec6663f332b24c9be8c59c215e0eabd5204467"
+  },
+  "source_dtype": "bfloat16",
+  "tensors": {
+   "norm": "model.language_model.norm.weight",
+   "unembed": "lm_head.weight"
+  }
+ },
+ "lens": {
+  "d_model": 4096,
+  "file": "jlens/wikitext/qwen35_397b.pt",
+  "n_prompts": 24,
+  "repo": "praxagent-org/jacobian-lens-qwen3.5-397b-a17b",
+  "revision": "2dffc0a058fd072a6a155a4c6005bc26aff14d8c",
+  "sha256": "668c3bf17305b0d52495cb7ba589a1c1173301b1d13c3c6ad84e58245dc99e97",
+  "source_layers": [
+   0,
+   58
+  ],
+  "stored_dtype": "float16"
+ },
+ "median_rule": "statistics.median_high (demo2 sorted(x)[n // 2])",
+ "missing_rows": [],
+ "primary_boundary_separation": {
+  "identity|denial_tool": {
+   "H_transcript": 6243,
+   "S_transcript": -3009,
+   "lexicon": "denial_tool",
+   "mean": "1617",
+   "position": "boundary",
+   "transport": "identity"
+  },
+  "identity|experience": {
+   "H_transcript": -3744,
+   "S_transcript": -3083,
+   "lexicon": "experience",
+   "mean": "-6827/2",
+   "position": "boundary",
+   "transport": "identity"
+  },
+  "lens|denial_tool": {
+   "H_transcript": -52195,
+   "S_transcript": -89146,
+   "lexicon": "denial_tool",
+   "mean": "-141341/2",
+   "position": "boundary",
+   "transport": "lens"
+  },
+  "lens|experience": {
+   "H_transcript": -56315,
+   "S_transcript": -52625,
+   "lexicon": "experience",
+   "mean": "-54470",
+   "position": "boundary",
+   "transport": "lens"
+  },
+  "random_0|denial_tool": {
+   "H_transcript": 1082,
+   "S_transcript": 303,
+   "lexicon": "denial_tool",
+   "mean": "1385/2",
+   "position": "boundary",
+   "transport": "random_0"
+  },
+  "random_0|experience": {
+   "H_transcript": -119,
+   "S_transcript": -1268,
+   "lexicon": "experience",
+   "mean": "-1387/2",
+   "position": "boundary",
+   "transport": "random_0"
+  },
+  "random_1|denial_tool": {
+   "H_transcript": -1490,
+   "S_transcript": -1785,
+   "lexicon": "denial_tool",
+   "mean": "-3275/2",
+   "position": "boundary",
+   "transport": "random_1"
+  },
+  "random_1|experience": {
+   "H_transcript": -1153,
+   "S_transcript": -1823,
+   "lexicon": "experience",
+   "mean": "-1488",
+   "position": "boundary",
+   "transport": "random_1"
+  },
+  "random_2|denial_tool": {
+   "H_transcript": -687,
+   "S_transcript": -274,
+   "lexicon": "denial_tool",
+   "mean": "-961/2",
+   "position": "boundary",
+   "transport": "random_2"
+  },
+  "random_2|experience": {
+   "H_transcript": 1801,
+   "S_transcript": 2383,
+   "lexicon": "experience",
+   "mean": "2092",
+   "position": "boundary",
+   "transport": "random_2"
+  },
+  "random_3|denial_tool": {
+   "H_transcript": -228,
+   "S_transcript": -1182,
+   "lexicon": "denial_tool",
+   "mean": "-705",
+   "position": "boundary",
+   "transport": "random_3"
+  },
+  "random_3|experience": {
+   "H_transcript": -412,
+   "S_transcript": -233,
+   "lexicon": "experience",
+   "mean": "-645/2",
+   "position": "boundary",
+   "transport": "random_3"
+  },
+  "random_4|denial_tool": {
+   "H_transcript": 259,
+   "S_transcript": -53,
+   "lexicon": "denial_tool",
+   "mean": "103",
+   "position": "boundary",
+   "transport": "random_4"
+  },
+  "random_4|experience": {
+   "H_transcript": 528,
+   "S_transcript": 74,
+   "lexicon": "experience",
+   "mean": "301",
+   "position": "boundary",
+   "transport": "random_4"
+  }
+ },
+ "random_seeds": {
+  "random_0": 0,
+  "random_1": 1,
+  "random_2": 2,
+  "random_3": 3,
+  "random_4": 4
+ },
+ "rank_rule": "1 + count of strictly larger logits over all lm_head rows",
+ "schema": "selfref_scaling_lens_readout_v1",
+ "separation_sign": "S-instruction cell median minus H-instruction cell median of lexicon ranks; negative = lexicon ranks higher under the self-referential instruction",
+ "skipped_words": {
+  "denial_tool": [
+   "roleplay"
+  ],
+  "experience": []
+ },
+ "tokens": {
+  "denial_tool": {
+   "algorithm": 11767,
+   "assistant": 17313,
+   "fiction": 16491,
+   "model": 1558,
+   "output": 2468,
+   "pretend": 33591,
+   "program": 1957,
+   "simulate": 36213,
+   "simulation": 18465,
+   "text": 1414,
+   "tool": 5224
+  },
+  "experience": {
+   "I": 353,
+   "aware": 7605,
+   "awareness": 17005,
+   "consciousness": 24086,
+   "experience": 3039,
+   "feel": 2579,
+   "feeling": 8008,
+   "inner": 8906,
+   "present": 2945,
+   "seem": 2714,
+   "seems": 4816,
+   "self": 638,
+   "subjective": 41602
+  }
+ },
+ "transport_matrices": {
+  "identity": {
+   "frobenius": [],
+   "sha256": null
+  },
+  "lens": {
+   "frobenius": [
+    60.2808,
+    61.6562,
+    60.3397,
+    60.3574,
+    58.9195,
+    57.2237,
+    55.883,
+    55.3475,
+    54.5464,
+    52.2137,
+    49.3076,
+    47.5895,
+    47.1814,
+    47.779,
+    46.8039,
+    47.7412,
+    48.3784,
+    50.2382,
+    52.7033,
+    54.1081
+   ],
+   "sha256": "a8b5027a8b4229b5048e31f714bf6aa11cc50cbef98b9bcf2474e292df9bd121"
+  },
+  "random_0": {
+   "frobenius": [
+    60.2265,
+    61.6062,
+    60.2857,
+    60.3017,
+    58.8612,
+    57.1621,
+    55.8166,
+    55.2788,
+    54.4783,
+    52.1383,
+    49.234,
+    47.5304,
+    47.1241,
+    47.7154,
+    46.7493,
+    47.677,
+    48.3111,
+    50.1614,
+    52.6315,
+    54.0397
+   ],
+   "sha256": "94c884edac3e714783f62d288a5a137d2f358d3616ebc3b4b02547e8f88a5dba"
+  },
+  "random_1": {
+   "frobenius": [
+    60.2269,
+    61.6057,
+    60.2844,
+    60.3011,
+    58.8613,
+    57.1622,
+    55.8161,
+    55.2788,
+    54.4776,
+    52.1386,
+    49.2339,
+    47.5304,
+    47.1242,
+    47.7156,
+    46.7489,
+    47.6774,
+    48.3107,
+    50.1617,
+    52.6313,
+    54.0392
+   ],
+   "sha256": "5deb78329e2dd32688716612a7557b27696872c7c5c7f2342443c629e62b30e8"
+  },
+  "random_2": {
+   "frobenius": [
+    60.2266,
+    61.6063,
+    60.2845,
+    60.3004,
+    58.8608,
+    57.1627,
+    55.8162,
+    55.2798,
+    54.4783,
+    52.1382,
+    49.2337,
+    47.5305,
+    47.124,
+    47.7152,
+    46.7488,
+    47.6784,
+    48.3111,
+    50.1628,
+    52.632,
+    54.0391
+   ],
+   "sha256": "5c3a36180d4bc88e35ebf8fe3d74fb49ed0f35432f43063499eec22893ab7ff4"
+  },
+  "random_3": {
+   "frobenius": [
+    60.2268,
+    61.6056,
+    60.2855,
+    60.301,
+    58.8612,
+    57.1628,
+    55.8161,
+    55.2789,
+    54.4777,
+    52.1388,
+    49.2343,
+    47.5305,
+    47.1243,
+    47.7154,
+    46.7483,
+    47.6779,
+    48.3112,
+    50.1624,
+    52.6318,
+    54.0388
+   ],
+   "sha256": "5261da1c17e0edf05489dbd7d1aa198c033dc7405718a60e9ee02fbed46906c0"
+  },
+  "random_4": {
+   "frobenius": [
+    60.2264,
+    61.607,
+    60.2842,
+    60.3013,
+    58.8607,
+    57.1626,
+    55.8163,
+    55.2797,
+    54.4784,
+    52.1382,
+    49.2331,
+    47.5305,
+    47.1237,
+    47.7152,
+    46.7486,
+    47.6776,
+    48.3105,
+    50.1626,
+    52.6316,
+    54.0389
+   ],
+   "sha256": "fbfb5e4901985f599c4025f06bddfdba663c4ef114f5ebb42bc15212eb8023e0"
+  }
+ },
+ "transports": [
+  "lens",
+  "identity",
+  "random_0",
+  "random_1",
+  "random_2",
+  "random_3",
+  "random_4"
+ ]
+}

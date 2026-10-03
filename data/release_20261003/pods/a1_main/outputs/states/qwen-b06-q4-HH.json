@@ -1,0 +1,1 @@
+{"dtype":"bfloat16","id":"qwen-b06-q4-HH","positions":["boundary","answer_1","answer_2","answer_3","answer_4"],"safetensors_sha256":"c12b16274d906ef34602c03f9fc407ed4c020cd744a81f0747a2946235b08e20","shape":[61,5,4096]}

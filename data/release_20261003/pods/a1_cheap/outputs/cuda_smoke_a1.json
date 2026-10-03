@@ -1,0 +1,38 @@
+{
+ "capture": {
+  "rows": 4,
+  "shape": [
+   9,
+   5,
+   64
+  ]
+ },
+ "determinism": {
+  "decode_seconds": 0.4771568365395069,
+  "identical": 8,
+  "rows": 8,
+  "steps": 24
+ },
+ "load": {
+  "capability": [
+   9,
+   0
+  ],
+  "cuda": "12.8",
+  "device_map_values": [
+   "0",
+   "1"
+  ],
+  "experts_implementation": "grouped_mm",
+  "gpus": [
+   "NVIDIA H100 80GB HBM3",
+   "NVIDIA H100 80GB HBM3"
+  ],
+  "text_experts_implementation": "grouped_mm",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.13.0"
+ },
+ "prefill": {
+  "max_abs_logit_diff_batched_vs_single_bf16": 0.00439453125
+ }
+}
