@@ -1,0 +1,25 @@
+name: tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  cpu-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements-ci.txt
+      - name: Plan reconstruction
+        run: |
+          if [ -f data/plan_20261003/PLAN.json ]; then python -m selfref_scaling.design --check data/plan_20261003/PLAN.json; fi
+      - name: Tests (CUDA smoke tests skip without GPUs)
+        run: python -m pytest -q

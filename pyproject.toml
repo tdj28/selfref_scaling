@@ -1,0 +1,10 @@
+[project]
+name = "selfref-scaling"
+version = "0.1.0"
+description = "Prospectively frozen Qwen3.5-397B-A17B extension of the CONSCIOUS self-reference experiments"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

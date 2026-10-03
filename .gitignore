@@ -1,0 +1,15 @@
+# Local environments, caches and runtime output (never public until released)
+.venv/
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+out/
+# Credentials and private material
+.env
+.env.*
+*.pem
+*.key
+id_*
+known_hosts
+APPROVE-*

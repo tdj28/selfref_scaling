@@ -1,0 +1,10 @@
+# Installed on the pod over the pinned image's torch 2.8.0 / CUDA 12.8.
+# The worker records the full resolved environment in out/pip-freeze.txt.
+transformers==5.13.0
+accelerate==1.15.0
+huggingface-hub==1.33.0
+hf-xet==1.6.0
+tokenizers==0.22.2
+safetensors==0.8.0
+numpy==2.2.6
+pytest==8.4.2
